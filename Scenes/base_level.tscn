@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dngke2s5k2n2l"]
+[gd_scene load_steps=10 format=3 uid="uid://dngke2s5k2n2l"]
 
 [ext_resource type="MeshLibrary" uid="uid://duqk0iwub5l5k" path="res://Scenes/MeshLibraries/space_library.tres" id="1_5gpc1"]
 
@@ -16,7 +16,23 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s04l"]
-albedo_color = Color(1, 1, 0.5882353, 1)
+albedo_color = Color(1.4439226e-07, 0.70104903, 1.540184e-06, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_5gpc1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 11.986502, 0, 13.961822, 1.3000001, 0, 1.4, -1.3000001, 0, -1.4, -2.2090068, 0, 13.963662, -0.7, 0, 1, 0.7, 0, -1, -2.2145257, 0, 5.925733, -0.8, 0, 1, 0.8, 0, -1, 6.0344367, 0, 5.9674582, 0.8, 0, 1.1, -0.8, 0, -1.1, 6.034, 0, -1.963, 0.7, 0, 2.7, -0.7, 0, -2.7, 1.5814543, 0, -2.7411017, 2, 0, 1, -2, 0, -1, 2.0062773, 0, -10.064833, 2, 0, 1, -2, 0, -1, -1.96177, 0, -10.06667, 2, 0, 2, -2, 0, -2, -2, 0, -14, 0, 0, 0, 0, 0, 0, -7.9193506, 0, -14.29299),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_577fb"]
+albedo_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gpc1"]
+albedo_color = Color(0.67779034, 0.55226755, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7ey7"]
+albedo_color = Color(0.67779034, 0.55226755, 0, 1)
 
 [node name="BaseLevel" type="Node3D"]
 
@@ -28,18 +44,66 @@ transform = Transform3D(-0.7471298, -0.6623631, 0.05542599, -0.49495652, 0.61007
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(0.575, 0, 0, 0, 1, 0, 0, 0, 0.575, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_5s04l")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -3.5527137e-15, -8.742278e-08, -7.64254e-08, 0.48555738, 0.87420475, 4.2448775e-08, 0.87420475, -0.48555738, 0, 36.465843, -39.935535)
+transform = Transform3D(-1.1313336e-08, -0.9659259, 0.25881907, -4.222196e-08, 0.25881907, 0.9659258, -1, -3.5527137e-15, -4.371139e-08, 8, 14.465843, -0.93553543)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_5gpc1")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 1, 65534, 65532, 1, 65534, 65533, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 1, 1, 65534, 2, 1, 65534, 3, 1, 65534, 4, 1, 65535, 65532, 1, 65535, 65533, 1, 65535, 65534, 1, 65535, 65535, 1, 65535, 1, 1, 65535, 2, 1, 65535, 3, 1, 65535, 4, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 1, 65532, 1, 1, 65533, 1, 1, 65534, 1, 1, 65535, 1, 1, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 2, 65532, 1, 2, 65533, 1, 2, 65534, 1, 2, 65535, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1)
+"cells": PackedInt32Array(65534, 0, 1, 65535, 0, 1, 0, 0, 1, 2, 0, 1, 65534, 65533, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 1, 1, 65534, 2, 1, 65534, 3, 1, 65534, 4, 1, 65535, 4, 1, 0, 2, 1, 0, 4, 1, 1, 2, 1, 2, 65532, 1, 2, 65534, 1, 2, 65535, 1, 2, 1, 1, 2, 2, 1, 2, 4, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1, 1, 4, 1, 2, 65533, 1, 1, 65534, 1, 1, 65533, 1, 0, 65532, 1, 1, 65532, 1, 65535, 65535, 1, 65535, 65534, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_5gpc1")
+
+[node name="Road" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-1, 0, -1, 0.2, 1, 0.2, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_577fb")
+
+[node name="RightEdge" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(1.1, 0, 1.1, 0.3, 0.98, 0.25, 0.9, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_5gpc1")
+
+[node name="LeftEdge" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-1.1, 0, -1, 0.3, -0.9, 0.25, -0.9, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_l7ey7")
