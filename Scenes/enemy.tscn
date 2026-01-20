@@ -12,6 +12,7 @@ height = 3.0
 
 [node name="Enemy" type="PathFollow3D"]
 transform = Transform3D(-0.108069256, 0, 0.994126, 0, 1, 0, -0.994126, 0, -0.108069256, 0, 0, 0)
+loop = false
 script = ExtResource("1_613su")
 
 [node name="EnemyMesh" type="MeshInstance3D" parent="."]
