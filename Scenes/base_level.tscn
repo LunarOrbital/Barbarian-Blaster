@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dngke2s5k2n2l"]
+[gd_scene load_steps=13 format=3 uid="uid://dngke2s5k2n2l"]
 
 [ext_resource type="MeshLibrary" uid="uid://duqk0iwub5l5k" path="res://Scenes/MeshLibraries/space_library.tres" id="1_5gpc1"]
 [ext_resource type="PackedScene" uid="uid://y4t2jrewf66j" path="res://Scenes/enemy.tscn" id="2_5s04l"]
 [ext_resource type="PackedScene" uid="uid://bk6sqs6u5pcdc" path="res://Scenes/base.tscn" id="3_577fb"]
+[ext_resource type="PackedScene" uid="uid://bgoigm7pqb45p" path="res://Scenes/ray_picker_camera.tscn" id="4_l7ey7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i06e5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,15 +51,12 @@ transform = Transform3D(0.575, 0, 0, 0, 1, 0, 0, 0, 0.575, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_5s04l")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-2.1855689e-08, -0.86602545, 0.5, -3.785517e-08, 0.5, 0.8660253, -1, -3.5527137e-15, -4.371139e-08, 8, 14.465843, -0.93553543)
-
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_5gpc1")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65534, 0, 1, 65535, 0, 1, 0, 0, 1, 2, 0, 1, 65534, 65533, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 1, 1, 65534, 2, 1, 65534, 3, 1, 65534, 4, 1, 65535, 4, 1, 0, 2, 1, 0, 4, 1, 1, 2, 1, 2, 65532, 1, 2, 65534, 1, 2, 65535, 1, 2, 1, 1, 2, 2, 1, 2, 4, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1, 1, 4, 1, 2, 65533, 1, 1, 65534, 1, 1, 65533, 1, 0, 65532, 1, 1, 65532, 1, 65535, 65535, 1, 65535, 65534, 1)
+"cells": PackedInt32Array(65534, 0, 0, 65535, 0, 0, 0, 0, 0, 2, 0, 0, 65534, 65533, 0, 65534, 65534, 0, 65534, 65535, 0, 65534, 1, 0, 65534, 2, 0, 65534, 3, 0, 65534, 4, 0, 65535, 4, 0, 0, 2, 0, 0, 4, 0, 1, 2, 0, 2, 65532, 0, 2, 65534, 0, 2, 65535, 0, 2, 1, 0, 2, 2, 0, 2, 4, 0, 65534, 65531, 0, 65535, 65531, 0, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 1, 4, 0, 2, 65533, 0, 1, 65534, 0, 1, 65533, 0, 0, 65532, 0, 1, 65532, 0, 65535, 65535, 0, 65535, 65534, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -111,14 +109,14 @@ path_joined = false
 material = SubResource("StandardMaterial3D_l7ey7")
 
 [node name="Enemy" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
-transform = Transform3D(-0.10806941, 0, 0.99412745, 0, 1, 0, -0.99412745, 0, -0.10806941, 11.986502, 0, 13.961822)
+transform = Transform3D(-0.10806946, 0, 0.99412787, 0, 1, 0, -0.99412787, 0, -0.10806946, 11.986502, 0, 13.961822)
 
 [node name="Enemy2" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
 transform = Transform3D(-0.067041434, 0, 0.9977344, 0, 1, 0, -0.9977344, 0, -0.067041434, 7.005297, 0, 14.390315)
 progress = 5.0
 
 [node name="Enemy3" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
-transform = Transform3D(0.0008159308, 0, 0.9999837, 0, 1, 0, -0.9999837, 0, 0.0008159308, 2.0097446, 0, 14.585394)
+transform = Transform3D(0.0008159304, 0, 0.9999833, 0, 1, 0, -0.9999833, 0, 0.0008159304, 2.0097446, 0, 14.585394)
 progress = 10.0
 
 [node name="Enemy4" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
@@ -126,8 +124,13 @@ transform = Transform3D(0.92218906, 0, 0.38669875, 0, 1, 0, -0.38669875, 0, 0.92
 progress = 15.0
 
 [node name="Enemy5" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
-transform = Transform3D(0.9928342, 0, -0.1193676, 0, 1, 0, 0.1193676, 0, 0.9928342, -2.8515856, 0, 8.440503)
+transform = Transform3D(0.9928341, 0, -0.119367585, 0, 1, 0, 0.119367585, 0, 0.9928341, -2.8515856, 0, 8.440503)
 progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_577fb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9193506, 0, -14.29299)
+
+[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridMap") instance=ExtResource("4_l7ey7")]
+transform = Transform3D(-1.49011585e-08, -0.86602545, 0.49999994, -2.5809566e-08, 0.49999994, 0.86602545, -1, 8.881784e-16, -2.980232e-08, 11, 15, 0)
+current = true
+gridMap = NodePath("../GridMap")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://4tsorewm31c7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_axnog"]
+top_radius = 1.0
+bottom_radius = 1.5
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fcprl"]
+top_radius = 1.2
+bottom_radius = 1.0
+height = 0.5
+
+[sub_resource type="TorusMesh" id="TorusMesh_hskch"]
+inner_radius = 0.716
+outer_radius = 1.235
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6spbj"]
+top_radius = 1.0
+height = 0.4
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pulj5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ahfaj"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 3.0
+
+[node name="Turret" type="Node3D"]
+
+[node name="TurretBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_axnog")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TurretBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_fcprl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TurretBase"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.25, 0)
+mesh = SubResource("CylinderMesh_fcprl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999995, -2.6226814e-08)
+mesh = SubResource("TorusMesh_hskch")
+
+[node name="TurretRotor" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2"]
+transform = Transform3D(1.0000001, 1.2156942e-14, 2.9802322e-08, -2.036897e-14, 1, 0, -2.9802322e-08, -7.1054274e-15, 1.0000001, 0, -0.4000001, 3.4969133e-08)
+mesh = SubResource("CylinderMesh_6spbj")
+
+[node name="TurrentHinge" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2/TurretRotor"]
+transform = Transform3D(-4.371139e-08, 1, -8.940697e-08, -1, -4.371138e-08, 8.7422784e-08, 8.742279e-08, 8.940697e-08, 1, -1.0048592e-14, -0.5, -0.3999999)
+mesh = SubResource("CapsuleMesh_pulj5")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2/TurretRotor/TurrentHinge"]
+transform = Transform3D(-4.371139e-08, -1.1920929e-07, -0.99999994, 0.99999994, -5.9604645e-08, -4.371138e-08, -5.9604645e-08, -0.9999999, 1.1920929e-07, 0.10000014, -0.2999999, 0.6999999)
+mesh = SubResource("CylinderMesh_ahfaj")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2/TurretRotor/TurrentHinge"]
+transform = Transform3D(-4.371139e-08, -1.1920929e-07, -0.99999994, 0.99999994, -5.9604645e-08, -4.371138e-08, -5.9604645e-08, -0.9999999, 1.1920929e-07, 0.10000014, 0.40000007, 0.6999999)
+mesh = SubResource("CylinderMesh_ahfaj")
+skeleton = NodePath("../../..")
