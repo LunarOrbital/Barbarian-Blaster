@@ -12,7 +12,6 @@ script = ExtResource("1_31hd7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 radius = 1.0
 height = 3.5
-sides = 34
 material = SubResource("StandardMaterial3D_2nhcr")
 
 [node name="Label3D" type="Label3D" parent="."]

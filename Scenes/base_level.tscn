@@ -48,8 +48,8 @@ transform = Transform3D(-0.7471298, -0.6623631, 0.05542599, -0.49495652, 0.61007
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.575, 0, 0, 0, 1, 0, 0, 0, 0.575, 0, -1, 0)
-size = Vector3(100, 2, 100)
+transform = Transform3D(0.575, 0, 0, 0, 1, 0, 0, 0, 0.575, -6.6124997, -1, -8.940697e-08)
+size = Vector3(75, 2, 146)
 material = SubResource("StandardMaterial3D_5s04l")
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -113,7 +113,7 @@ material = SubResource("StandardMaterial3D_l7ey7")
 transform = Transform3D(-0.108069465, 0, 0.9941279, 0, 1, 0, -0.9941279, 0, -0.108069465, 11.986502, 0, 13.961822)
 
 [node name="Enemy3" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
-transform = Transform3D(0.0008159302, 0, 0.999983, 0, 1, 0, -0.999983, 0, 0.0008159302, 2.0097446, 0, 14.585394)
+transform = Transform3D(0.00081593, 0, 0.99998283, 0, 1, 0, -0.99998283, 0, 0.00081593, 2.0097446, 0, 14.585394)
 progress = 10.0
 
 [node name="Enemy4" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
