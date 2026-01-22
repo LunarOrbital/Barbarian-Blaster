@@ -16,7 +16,7 @@ outer_radius = 1.235
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6spbj"]
 top_radius = 1.0
-height = 0.4
+height = 0.6
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pulj5"]
 
@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999995, -2.6226814e-08
 mesh = SubResource("TorusMesh_hskch")
 
 [node name="TurretRotor" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2"]
-transform = Transform3D(1.0000001, 1.2156942e-14, 2.9802322e-08, -2.036897e-14, 1, 0, -2.9802322e-08, -7.1054274e-15, 1.0000001, 0, -0.4000001, 3.4969133e-08)
+transform = Transform3D(1.0000001, 1.2156942e-14, 2.9802322e-08, -2.036897e-14, 1, 0, -2.9802322e-08, -7.1054274e-15, 1.0000001, 0, -0.50000024, 4.3711424e-08)
 mesh = SubResource("CylinderMesh_6spbj")
 
 [node name="TurrentHinge" type="MeshInstance3D" parent="TurretBase/MeshInstance3D2/TurretRotor"]

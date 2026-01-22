@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu4gqqbruv80t"]
+
+[ext_resource type="Script" uid="uid://cmwr4sonvld37" path="res://turret_manager.gd" id="1_0bsbv"]
+[ext_resource type="PackedScene" uid="uid://4tsorewm31c7" path="res://Scenes/turret.tscn" id="2_cc34e"]
+
+[node name="TurretManager" type="Node3D"]
+script = ExtResource("1_0bsbv")
+turret = ExtResource("2_cc34e")
