@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [global_group]
 
 base=""
+Enemy_area=""
 
 [input]
 

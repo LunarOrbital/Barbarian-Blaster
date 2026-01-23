@@ -11,6 +11,7 @@ var health : int :
 		label_3d.modulate = red.lerp(white, float(health)/float(max_health))
 		
 func _ready() -> void:
+	#Engine.time_scale = 10
 	health = max_health
 func take_damage() -> void:
 	health -=1

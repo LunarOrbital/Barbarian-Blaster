@@ -15,6 +15,7 @@ material = SubResource("StandardMaterial3D_2dugc")
 [node name="TProjectile" type="Area3D"]
 top_level = true
 script = ExtResource("1_0fja1")
+speed = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_0fja1")
@@ -27,4 +28,5 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
