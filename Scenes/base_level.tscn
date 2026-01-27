@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://y4t2jrewf66j" path="res://Scenes/enemy.tscn" id="2_5s04l"]
 [ext_resource type="PackedScene" uid="uid://bk6sqs6u5pcdc" path="res://Scenes/base.tscn" id="3_577fb"]
 [ext_resource type="PackedScene" uid="uid://bgoigm7pqb45p" path="res://Scenes/ray_picker_camera.tscn" id="4_l7ey7"]
-[ext_resource type="PackedScene" uid="uid://bu4gqqbruv80t" path="res://turret_manager.tscn" id="5_0f2sa"]
+[ext_resource type="PackedScene" uid="uid://bu4gqqbruv80t" path="res://Scenes/turret_manager.tscn" id="5_0f2sa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i06e5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -113,7 +113,7 @@ material = SubResource("StandardMaterial3D_l7ey7")
 transform = Transform3D(-0.108069465, 0, 0.9941279, 0, 1, 0, -0.9941279, 0, -0.108069465, 11.986502, 0, 13.961822)
 
 [node name="Enemy3" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
-transform = Transform3D(0.00081592967, 0, 0.99998236, 0, 1, 0, -0.99998236, 0, 0.00081592967, 2.0097446, 0, 14.585394)
+transform = Transform3D(0.0008159296, 0, 0.9999823, 0, 1, 0, -0.9999823, 0, 0.0008159296, 2.0097446, 0, 14.585394)
 progress = 10.0
 
 [node name="Enemy4" parent="EnemyPath\'" instance=ExtResource("2_5s04l")]
